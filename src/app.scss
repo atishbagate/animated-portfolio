@@ -1,0 +1,65 @@
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+     background-color: #0c0c1d;
+     color: lightgray;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+section{
+    height: 100vh;
+    scroll-snap-align: center;
+}
+
+.course{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: wheat;
+}
+
+@mixin mobile {
+    @media (max-witdh:738px) {
+        @content;
+    }
+}
+@mixin table {
+    @media (max-witdh:1024px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (max-witdh:1366px) {
+        @content;
+    }
+}
+// ------------
+@mixin devices ($breakpoint) { //the name of the mixin is devices
+  
+    @if $breakpoint == tablet {    
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
+ 
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 481px) {
+      @content;
+    }
+  }
+}

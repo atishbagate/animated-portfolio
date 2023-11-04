@@ -1,0 +1,145 @@
+@import "../../app.scss";
+
+.services {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .textContainer {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include devices(mobile) {
+      align-self: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    p{
+        font-weight: 200;
+        font-size: 20px;
+        color: gray;
+        text-align: right;
+    }
+    hr{
+        width: 500px; 
+        border-top: 0.5 solid gray;
+
+        @include devices(mobile) {
+        width: 300px;
+        }
+
+    }
+  }
+  .titleContainer {
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include devices(mobile) {
+      width: 100%;
+      }
+
+
+    .title {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        @include devices(mobile) {
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+          }
+
+      img {
+        width: 300px;
+        height: 100px;
+        border-radius: 50px;
+        object-fit: cover;
+        @include devices(mobile) {
+          width: 250px;
+          height: 80px;
+          border-radius: 30px;
+          }
+      }
+      h1{
+        font-size: 96px;
+        font-weight: 100;
+
+        @include devices(mobile) {
+          font-size: 25px;
+        font-weight: 80;
+          }
+      }
+      button{
+        width: 20rem;
+        height: 5rem;
+        border-radius: 50px;
+        background-color: orange;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+
+        @include devices(mobile) {
+          width: 10rem;
+          height: 3rem;
+          }
+      }
+    }
+  }
+  .listContainer{
+    flex:2;
+    display: flex; 
+    max-width: 60%;  
+    margin: auto;
+
+    @include devices(mobile) {
+      flex-direction: column;
+      width: 100%;
+
+      }
+
+
+    .box{
+        padding: 1rem; 
+        border: 0.5px solid gray;
+        display: flex;
+        flex-direction: column;   
+        justify-content: space-between;
+        background:linear-gradient(180deg, #0c0c1d, #111132);
+
+        @include devices(mobile){
+          border: none;
+          align-items: center;
+        }
+
+        p{
+          @include devices(mobile){
+            display: none;
+            border: none;
+          }
+        }
+
+    button{
+        padding: 0.5rem;
+        background-color: orange;
+        border: navajowhite;
+        cursor: pointer;
+        @include devices(mobile){
+          border-color: transparent;
+          border: 1px solid orange;
+          border-radius: 5px;
+          width: 50%;
+        }
+
+    }
+}
+
+  }
+}

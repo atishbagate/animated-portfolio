@@ -1,0 +1,101 @@
+@import "../../app.scss";
+
+.portfolio {
+  .progress {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    text-align: center;
+    color: orange;
+    font-size: 30px;
+
+
+    @include devices(mobile) {
+      padding-top: calc(100vh - 100px);
+      font-size: 10px;
+    }
+
+    .progressBar {
+      height: 8px;
+      background-color: wheat;
+    }
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .wrapper {
+      max-width: 50%;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:5vw;
+
+      @include devices(mobile) {
+       flex-direction: column;
+
+      }
+
+
+      .imageContainer {
+        flex: 1;
+        height: 50%;
+        width: 150%;
+        overflow: hidden;
+        
+        @include devices(mobile) {
+          width: 100%;
+          max-height: 200px;
+        }
+
+        img {
+         width: 150%;
+         height: 120%;
+          object-fit:contain;
+        }
+      }
+      .textContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap:30px;
+
+        @include devices(mobile) {
+          transform: none !important;
+          padding: 10px;
+          align-items: center;
+          text-align: center;
+        }
+
+        h2{
+            font-size: 72px;
+            @include devices(mobile) {
+              font-size: 26px;
+            }
+        }
+        p{
+            color: gray;
+            font-size: 20px;
+            @include devices(mobile) {
+              font-size: 20px;
+            }
+        }
+        button{
+            background-color: orange;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            width: 8vw;
+            cursor: pointer;
+        }
+      }
+    }
+  }
+}
